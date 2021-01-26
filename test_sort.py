@@ -43,6 +43,10 @@ class TestSortTiming(unittest.TestCase):
         start = perf_counter()
         test.sort()
         tim_elapsed_time = perf_counter() - start
+        # print(selection_elapsed_time, 'selection')
+        # print(quick_elapsed_time, 'quick')
+        # print(merge_elapsed_time, 'merge')
+        # print(insertion_elapsed_time, 'insertion')
 
         self.assertLess(merge_elapsed_time, insertion_elapsed_time)
         self.assertLess(quick_elapsed_time, selection_elapsed_time)
@@ -80,6 +84,7 @@ class TestCodingStandards(unittest.TestCase):
             if file_name[:5] != "test_" and file_name != "recursioncounter.py":
                 (pylint_stdout, _) = lint.py_run(file_name, return_std=True)
                 output = pylint_stdout.getvalue()
+                print(output)
                 offset = output.rfind(" been rated at ")
                 if offset != -1:
                     output = output[offset:]
@@ -90,3 +95,6 @@ class TestCodingStandards(unittest.TestCase):
 
 
 TestSortTiming().test_sort_times()
+TestIsSorted().test_sorted_list()
+TestParameterTypes().test_parameters()
+TestCodingStandards().test_code_quality()
