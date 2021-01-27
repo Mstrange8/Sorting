@@ -133,30 +133,36 @@ def is_sorted(lyst):
 
 def main():
     """Print sorting run times."""
-    lyst = random.sample(range(100000000), k=100000)
+
+    lyst = random.sample(range(30000), k=10000)
+    selection_list = lyst.copy()
+    insertion_list = lyst.copy()
+    merge_list = lyst.copy()
+    quick_list = lyst.copy()
+
 
     """Selection Sort"""
     print("Starting selection_sort")
     start_time = perf_counter()
-    selection_sort(lyst)
-    print("Selection sort duration: {:4f} seconds".format(perf_counter() - start_time))
+    selection_sort(selection_list)
+    print("Selection sort duration: {:4f} seconds\n".format(perf_counter() - start_time))
 
     """Insertion Sort"""
     print("Starting insertion_sort")
     start_time = perf_counter()
-    insertion_sort(lyst)
-    print("Insertion sort duration: {:4f} seconds".format(perf_counter() - start_time))
+    insertion_sort(insertion_list)
+    print("Insertion sort duration: {:4f} seconds\n".format(perf_counter() - start_time))
 
     """Merge Sort"""
     print("Starting mergesort")
     start_time = perf_counter()
-    mergesort(lyst)
-    print("Mergesort duration: {:4f} seconds".format(perf_counter() - start_time))
+    mergesort(merge_list)
+    print("Mergesort duration: {:4f} seconds\n".format(perf_counter() - start_time))
 
     """Quick Sort"""
     print("Starting quicksort")
     start_time = perf_counter()
-    quicksort([30, 20, 69, 654, 345, 23, 777, 453, 1, 233, 45])
+    quicksort(quick_list)
     print("Quicksort duration: {:4f} seconds".format(perf_counter() - start_time))
 
 

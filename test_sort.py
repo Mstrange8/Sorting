@@ -84,7 +84,6 @@ class TestCodingStandards(unittest.TestCase):
             if file_name[:5] != "test_" and file_name != "recursioncounter.py":
                 (pylint_stdout, _) = lint.py_run(file_name, return_std=True)
                 output = pylint_stdout.getvalue()
-                print(output)
                 offset = output.rfind(" been rated at ")
                 if offset != -1:
                     output = output[offset:]
