@@ -45,7 +45,7 @@ def quicksort(lyst, low=0, high=None):
     raise ValueError
 
 
-""" Merge sort continuously divies the array in half until each element is separate.
+""" Merge sort continuously divides the array in half until each element is separate.
 Then it combines each of these elements, sorting them along the way. """
 
 
